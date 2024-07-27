@@ -2,9 +2,7 @@ const Amortization = ({
   emi,
   amortization,
   showGst,
-  gstPercentage,
   totalInterestPayable,
-  totalPayment,
   gstAmount,
 }) => {
   const totalPrincipal = amortization.reduce((acc, item) => acc + item.principal, 0);
@@ -13,6 +11,7 @@ const Amortization = ({
     <>
       {emi > 0 && (
         <div className="px-1 py-3">
+          <hr className="border-gray-300 dark:border-gray-600" />
           <h3 className="text-lg font-bold">EMI: ₹{emi.toFixed(2)}</h3>
 
           <h3 className="text-center bg-gray-50 dark:bg-gray-800 text-lg font-bold py-2 border-t border-r border-l rounded-t-lg border-gray-200 dark:border-gray-700 dark:text-gray-400">
@@ -31,7 +30,7 @@ const Amortization = ({
                     <th scope="col" className="px-6 py-3">GST</th>
                   )}
                   <th scope="col" className="px-6 py-3">Principal Balance</th>
-                  <th scope="col" className="px-6 py-3">Final Amt</th>
+                  <th scope="col" className="px-6 py-3">Final Amount</th>
                 </tr>
               </thead>
               <tbody>
